@@ -4,12 +4,9 @@ import (
 	"fmt"
 	"os"
 )
-
-
 type FileConfig struct{
 	Filename string
 }
-
 func(f *FileConfig)ReadFile()[]byte{
 	data,err := os.ReadFile(f.Filename)
 	if err != nil{
