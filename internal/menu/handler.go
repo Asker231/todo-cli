@@ -2,14 +2,13 @@ package menu
 
 import (
 	"fmt"
-	"github.com/fatih/color"
+	"github.com/Asker231/todo-cli.git/pkg/colors"
 	term "github.com/nsf/termbox-go"
 )
 
 func reset() {
 	term.Sync()
 }
-
 func Select(sel int) {
 	Menu(sel)
 loop:
@@ -42,7 +41,7 @@ loop:
 
 func Menu(sel int) {
 	if sel == 1 {
-		color.Cyan("Add todo: ➕\n")
+		colors.Cyan("Add todo: ➕\n")
 		fmt.Print("\n")
 		fmt.Print("Delete todo:🗑️\n")
 		fmt.Print("\n")
@@ -52,7 +51,7 @@ func Menu(sel int) {
 	if sel == 2 {
 		fmt.Print("Add todo: ➕\n")
 		fmt.Print("\n")
-		color.Cyan("Delete todo:🗑️\n")
+		colors.Cyan("Delete todo:🗑️\n")
 		fmt.Print("\n")
 		fmt.Print("List:📋\n")
 	}
@@ -62,6 +61,6 @@ func Menu(sel int) {
 		fmt.Print("\n")
 		fmt.Print("Delete todo:🗑️\n")
 		fmt.Print("\n")
-		color.Cyan("List:📋\n")
+		colors.Cyan("List:📋\n")
 	}
 }
