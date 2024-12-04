@@ -18,20 +18,45 @@ loop:
 		case term.EventKey:
 			switch ev.Key {
 			case term.KeyArrowDown:
-				if sel > 2 {sel = 2}
+				if sel > 2 {
+					sel = 2
+				}
 				sel += 1
 				reset()
 				Menu(sel)
 			case term.KeyArrowUp:
-				if sel <= 1 {sel += 1}
+				if sel <= 1 {
+					sel += 1
+				}
 				sel -= 1
 				reset()
 				Menu(sel)
+			case term.KeyEnter:
+				EnterCommand(sel)
 			default:
 				reset()
 				break loop
 			}
 		}
+	}
+}
+
+func EnterCommand(sel int) {
+
+	for {
+		if sel == 1 {
+			reset()
+			fmt.Println("Add todo")
+		}
+		if sel == 2 {
+			reset()
+			fmt.Println("Delete todo")
+		}
+		if sel == 3 {
+			reset()
+			fmt.Println("List")
+		}
+		break 
 	}
 }
 
