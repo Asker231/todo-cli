@@ -18,16 +18,12 @@ loop:
 		case term.EventKey:
 			switch ev.Key {
 			case term.KeyArrowDown:
-				if sel > 2 {
-					sel = 2
-				}
+				if sel > 2 {sel = 2}
 				sel += 1
 				reset()
 				Menu(sel)
 			case term.KeyArrowUp:
-				if sel <= 1 {
-					sel += 1
-				}
+				if sel <= 1 {sel += 1}
 				sel -= 1
 				reset()
 				Menu(sel)
@@ -41,26 +37,26 @@ loop:
 
 func Menu(sel int) {
 	if sel == 1 {
-		colors.Cyan("Add todo: ➕\n")
+		colors.Cyan("Add todo:  ➕\n")
 		fmt.Print("\n")
-		fmt.Print("Delete todo:🗑️\n")
+		fmt.Print("Delete todo: 🗑️\n")
 		fmt.Print("\n")
-		fmt.Print("List:📋\n")
+		fmt.Print("List: 📋\n")
 	}
 
 	if sel == 2 {
 		fmt.Print("Add todo: ➕\n")
 		fmt.Print("\n")
-		colors.Cyan("Delete todo:🗑️\n")
+		colors.Cyan("Delete todo: 🗑️\n")
 		fmt.Print("\n")
-		fmt.Print("List:📋\n")
+		fmt.Print("List: 📋\n")
 	}
 
 	if sel == 3 {
 		fmt.Print("Add todo: ➕\n")
 		fmt.Print("\n")
-		fmt.Print("Delete todo:🗑️\n")
+		fmt.Print("Delete todo: 🗑️\n")
 		fmt.Print("\n")
-		colors.Cyan("List:📋\n")
+		colors.Cyan("List: 📋\n")
 	}
 }
